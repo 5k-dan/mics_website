@@ -7,53 +7,11 @@ body {
 }
 
 /* Navbar */
-/* Navbar for PC */
-.navbar ul {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navbar li {
-    margin-right: 20px;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: color 0.3s;
-}
-
-.navbar a:hover {
-    color: #FFD700; /* Gold hover effect */
-}
-
-/* Executive Board Original Size */
-.board-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Original smaller size */
-    gap: 20px;
-    justify-items: center;
-}
-
-.card img {
-    border-radius: 50%;
-    width: 100px; /* Original image size */
-    height: 100px; /* Original image size */
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black; /* Modern dark theme */
+    background-color: black;
     color: white;
     padding: 1rem 2rem;
     position: sticky;
@@ -65,7 +23,7 @@ body {
 .navbar .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #4CAF50; /* Adds a highlight color */
+    color: blue; /* Change MICS text to blue */
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -88,8 +46,8 @@ body {
 }
 
 .nav-links a:hover {
-    color: #4CAF50; /* Highlight color for hover */
-    transform: scale(1.1);
+    color: blue; /* Change hover color to blue */
+    transform: scale(1.1); /* Slight scaling effect */
 }
 
 .nav-links a::after {
@@ -97,7 +55,7 @@ body {
     position: absolute;
     width: 0%;
     height: 2px;
-    background-color: #4CAF50;
+    background-color: blue; /* Add blue underline on hover */
     left: 0;
     bottom: -3px;
     transition: width 0.3s ease;
@@ -124,6 +82,27 @@ body {
         font-size: 1.2rem;
     }
 }
+
+/* Hover Buttons */
+.cta-btn {
+    display: inline-block;
+    background: blue; /* Blue button */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    color: white;
+    background: #0056b3; /* Darker blue on hover */
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
 
 
 /* Hero Section */

@@ -7,6 +7,47 @@ body {
 }
 
 /* Navbar */
+/* Navbar for PC */
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #FFD700; /* Gold hover effect */
+}
+
+/* Executive Board Original Size */
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Original smaller size */
+    gap: 20px;
+    justify-items: center;
+}
+
+.card img {
+    border-radius: 50%;
+    width: 100px; /* Original image size */
+    height: 100px; /* Original image size */
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
 /* Navbar */
 .navbar {
     display: flex;

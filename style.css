@@ -1,0 +1,438 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1E3A8A;
+    color: #FFFFFF;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.navbar ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #3B82F6;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+    background-color: black;
+    color: white;
+    position: relative;
+    padding: 50px 20px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Hero Content */
+.hero-content {
+    max-width: 50%;
+    z-index: 3;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin: 0;
+    font-weight: bold;
+    line-height: 1.2;
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    line-height: 1.8;
+    color: white;
+}
+
+.cta-btn {
+    margin-top: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #FF9800;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Spinning Ring */
+.spinning-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    animation: spin 10s linear infinite;
+    z-index: 1;
+}
+
+.ring-logo {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    animation: float 5s infinite alternate ease-in-out;
+    opacity: 0.9;
+}
+
+.ring-logo:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ring-logo:nth-child(2) {
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.ring-logo:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.ring-logo:nth-child(4) {
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+    100% {
+        transform: rotate(360deg) translate(-50%, -50%);
+    }
+}
+
+/* Scattered Boxes */
+.collage-boxes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.box {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: url('MICS_LOGO.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    animation: float 5s infinite alternate ease-in-out;
+}
+
+.box:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    transform: rotate(15deg);
+}
+
+.box:nth-child(2) {
+    top: 30%;
+    right: 15%;
+    transform: rotate(-10deg);
+}
+
+.box:nth-child(3) {
+    bottom: 20%;
+    left: 10%;
+    transform: rotate(25deg);
+}
+
+.box:nth-child(4) {
+    bottom: 10%;
+    right: 30%;
+    transform: rotate(-15deg);
+}
+
+.box:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+
+
+/* About Us Section */
+.about-us {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: #F3F4F6; /* Subtle Light Gray */
+    color: #1E293B; /* Darker Text Color */
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-us h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1E3A8A;
+    font-weight: bold;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-content p {
+    margin: 0;
+    color: #334155;
+    text-align: justify;
+}
+
+
+/* Executive Board Section */
+.e-board {
+    background-color: #F5F5F5;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.e-board h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1E3A8A;
+}
+
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.card {
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    background: #E5E7EB;
+}
+
+.card img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #1E3A8A;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #6B7280;
+}
+
+/* Events Section */
+.events-section {
+    padding: 50px;
+    background: white;
+    color: #333;
+    text-align: center;
+}
+
+.event-card {
+    background: #F5F5F5;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: #E5E7EB;
+    color: #1E3A8A;
+}
+/* Contact Section */
+.contact {
+    background-color: #3B82F6; /* Light Blue Background */
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact-form input, #contact-form textarea, #contact-form button {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    border-color: #2563EB;
+}
+
+#contact-form button {
+    background-color: #2563EB;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #1E3A8A;
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #F3F4F6; /* Light Gray */
+    padding: 3rem 2rem;
+}
+
+.faq h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1E3A8A;
+}
+
+.faq p {
+    font-size: 1rem;
+    color: #6B7280;
+}
+
+/* Upcoming Events Section */
+.events-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.event-card {
+    background: #FFFFFF;
+    color: #333333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Specific styling for Daniel Ladipo's image */
+#daniel-ladipo img {
+    object-fit: cover; /* Ensures the image fills the frame */
+    object-position: top center; /* Moves the image upward to show the head */
+    border-radius: 50%; /* Keeps the circular shape */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: #E5E7EB;
+    color: #1E3A8A;
+}
+
+/* Learn More Button */
+.cta-btn {
+    display: inline-block;
+    background: #007BFF; /* Blue color for Learn More button */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background: #0056b3; /* Darker blue on hover */
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}

@@ -7,58 +7,6 @@ body {
     color: white;
 }
 
-/* General Styles for Hero */
-/* Hero Section */
-.hero {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100vh;
-    background-color: #121212;
-    overflow: hidden;
-}
-
-/* Hero Title */
-.hero-title {
-    font-size: 6rem;
-    font-weight: 900;
-    margin: 0;
-    text-transform: uppercase;
-    color: #ffffff;
-    letter-spacing: 5px;
-    position: relative;
-    z-index: 2; /* Ensure text stays above bubbles */
-}
-
-.hero-title .mics-highlight {
-    display: inline-block;
-    font-family: 'Impact', sans-serif;
-    font-weight: 900;
-}
-
-.hero-title .mics-highlight span {
-    font-size: 7rem;
-    display: inline-block;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-/* Individual Colors for MICS Letters */
-.hero-title .mics-highlight span:nth-child(1) {
-    color: #FFFE95; /* Yellow */
-}
-.hero-title .mics-highlight span:nth-child(2) {
-    color: #EF5B53; /* Red */
-}
-.hero-title .mics-highlight span:nth-child(3) {
-    color: #6AD0A6; /* Green */
-}
-.hero-title .mics-highlight span:nth-child(4) {
-    color: #33487E; /* Blue */
-}
-
 /* Bubbles */
 .bubble-container {
     position: absolute;
@@ -75,27 +23,27 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    animation: bubble-oval 8s linear infinite;
+    animation: bubble-circle 8s linear infinite;
     opacity: 0.8;
     z-index: 1;
 }
 
-/* Oval Path Animation */
-@keyframes bubble-oval {
+/* Circular Path Animation */
+@keyframes bubble-circle {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) translateX(200px) translateY(50px);
+        transform: rotate(0deg) translate(250px) rotate(0deg);
     }
     25% {
-        transform: translate(-50%, -50%) rotate(90deg) translateX(150px) translateY(-50px);
+        transform: rotate(90deg) translate(250px) rotate(-90deg);
     }
     50% {
-        transform: translate(-50%, -50%) rotate(180deg) translateX(-200px) translateY(-50px);
+        transform: rotate(180deg) translate(250px) rotate(-180deg);
     }
     75% {
-        transform: translate(-50%, -50%) rotate(270deg) translateX(-150px) translateY(50px);
+        transform: rotate(270deg) translate(250px) rotate(-270deg);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) translateX(200px) translateY(50px);
+        transform: rotate(360deg) translate(250px) rotate(-360deg);
     }
 }
 
@@ -104,35 +52,35 @@ body {
     animation-duration: 8s;
     animation-delay: 0s;
     top: 50%;
-    left: 50%;
+    left: calc(50% - 100px); /* Starts slightly left of W */
 }
 
 .bubble:nth-child(2) {
     animation-duration: 9s;
     animation-delay: 0s;
-    top: 55%;
-    left: 45%;
+    top: 50%;
+    left: calc(50% - 100px); /* Starts at the same spot */
 }
 
 .bubble:nth-child(3) {
     animation-duration: 10s;
     animation-delay: 0s;
-    top: 45%;
-    left: 55%;
+    top: 50%;
+    left: calc(50% - 100px);
 }
 
 .bubble:nth-child(4) {
     animation-duration: 7s;
     animation-delay: 0s;
-    top: 40%;
-    left: 60%;
+    top: 50%;
+    left: calc(50% - 100px);
 }
 
 .bubble:nth-child(5) {
     animation-duration: 6s;
     animation-delay: 0s;
-    top: 60%;
-    left: 40%;
+    top: 50%;
+    left: calc(50% - 100px);
 }
 
 

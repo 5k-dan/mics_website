@@ -20,30 +20,26 @@ body {
     overflow: hidden;
 }
 
-/* Hero Content */
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-/* Hero Title */
+/* Hero Title with Billboard Effect */
 .hero-title {
-    font-size: 4rem;
+    font-size: 6rem; /* Increased font size for billboard effect */
     font-weight: bold;
     color: white;
     margin: 0;
     letter-spacing: 0.1rem;
+    text-transform: uppercase;
 }
 
 .hero-title .highlight span {
-    font-size: 4.5rem;
+    font-size: 7rem; /* Extra bold size for MICS */
     font-weight: bold;
     display: inline-block;
+    letter-spacing: -0.1rem; /* Removed spacing for MICS */
 }
 
 /* Hero Subtitle */
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 1rem 0;
     color: #f3f4f6;
 }
@@ -51,10 +47,10 @@ body {
 /* Learn More Button */
 .cta-btn {
     margin-top: 1.5rem;
-    padding: 0.8rem 2rem;
+    padding: 1rem 3rem;
     background-color: #3b82f6;
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     border: none;
     border-radius: 25px;
@@ -67,85 +63,8 @@ body {
     background-color: #2563eb;
     transform: translateY(-5px);
 }
-/* Bubble Container */
-.bubble-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none; /* Makes bubbles unclickable */
-    z-index: 1; /* Ensures bubbles are behind the text */
-}
 
-/* Bubbles */
-.bubble {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    opacity: 0.8;
-    animation: rotate 8s linear infinite;
-}
-
-/* Define Initial Bubble Positions */
-.bubble:nth-child(1) {
-    top: 50%;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.bubble:nth-child(2) {
-    top: 30%;
-    left: 30%;
-    animation-delay: 2s;
-}
-
-.bubble:nth-child(3) {
-    top: 20%;
-    left: 50%;
-    animation-delay: 4s;
-}
-
-.bubble:nth-child(4) {
-    top: 40%;
-    left: 70%;
-    animation-delay: 6s;
-}
-
-.bubble:nth-child(5) {
-    top: 60%;
-    left: 90%;
-    animation-delay: 8s;
-}
-
-/* Keyframes for Circular Rotation */
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg) translate(150px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translate(150px) rotate(-360deg);
-    }
-}
-
-/* Hero Title with Closer MICS */
-.hero-title {
-    font-size: 4rem;
-    font-weight: bold;
-    color: white;
-    margin: 0;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase; /* Ensure all caps */
-}
-
-.hero-title .highlight span {
-    font-size: 4.5rem;
-    font-weight: bold;
-    display: inline-block;
-    letter-spacing: -0.05rem; /* Closer spacing for MICS */
-}
-
-/* Bubble Container */
+/* Organized Bubbles */
 .bubble-container {
     position: absolute;
     width: 100%;
@@ -154,55 +73,67 @@ body {
     left: 0;
     pointer-events: none;
     z-index: 1; /* Behind the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Bubbles */
 .bubble {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     opacity: 0.8;
-    animation: spin-around 8s linear infinite;
+    animation: rotate-circle 8s linear infinite;
 }
 
-/* Position Initial Bubble Points */
+/* Specific Bubble Positions */
 .bubble:nth-child(1) {
-    top: 50%;
-    left: 20%;
+    transform: translate(-150px, -150px); /* Top-left */
     animation-delay: 0s;
 }
 
 .bubble:nth-child(2) {
-    top: 20%;
-    left: 40%;
-    animation-delay: 1.5s;
+    transform: translate(150px, -150px); /* Top-right */
+    animation-delay: 1s;
 }
 
 .bubble:nth-child(3) {
-    top: 40%;
-    left: 60%;
-    animation-delay: 3s;
+    transform: translate(-150px, 150px); /* Bottom-left */
+    animation-delay: 2s;
 }
 
 .bubble:nth-child(4) {
-    top: 60%;
-    left: 80%;
-    animation-delay: 4.5s;
+    transform: translate(150px, 150px); /* Bottom-right */
+    animation-delay: 3s;
 }
 
-.bubble:nth-child(5) {
-    top: 70%;
-    left: 30%;
-    animation-delay: 6s;
-}
-
-/* Circular Animation for Bubbles */
-@keyframes spin-around {
+/* Keyframes for Circular Animation */
+@keyframes rotate-circle {
     0% {
         transform: rotate(0deg) translate(150px) rotate(0deg);
     }
     100% {
         transform: rotate(360deg) translate(150px) rotate(-360deg);
+    }
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-title .highlight span {
+        font-size: 4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .bubble {
+        width: 30px;
+        height: 30px;
     }
 }
 

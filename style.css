@@ -7,7 +7,7 @@ body {
     color: white;
 }
 
-/* Hero Section */
+/* General Styles for Hero */
 .hero {
     position: relative;
     display: flex;
@@ -20,32 +20,41 @@ body {
     overflow: hidden;
 }
 
-.hero-content {
-    z-index: 2;
+/* Hero Title */
+.hero-title {
+    font-size: 6rem; /* Billboard-sized welcome */
+    font-weight: 900; /* Heavy block font */
+    margin: 0;
+    text-transform: uppercase; /* Bold statement look */
+    color: #ffffff;
+    letter-spacing: 5px; /* Slight letter spacing */
 }
 
-.hero-title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 0;
-    color: white;
+.hero-title .mics-highlight {
+    font-size: 7rem; /* Slightly larger for "MICS" */
+    display: inline-block;
+    font-family: 'Impact', sans-serif; /* Block font style */
+    font-weight: 900; /* Extra bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Subtle shadow */
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-    color: #f3f4f6;
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+    font-weight: 500;
+    color: #cccccc;
 }
 
+/* CTA Button */
 .cta-btn {
-    margin-top: 1.5rem;
-    padding: 0.8rem 2rem;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
     background-color: #3b82f6;
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     border: none;
-    border-radius: 25px;
+    border-radius: 50px;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
     cursor: pointer;
@@ -55,6 +64,56 @@ body {
     background-color: #2563eb;
     transform: translateY(-5px);
 }
+
+/* Bubbles Styling */
+.bubble-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interference */
+}
+
+.bubble {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: bubble-float 6s infinite ease-in-out;
+    opacity: 0.4; /* Slight transparency */
+}
+
+.bubble-1 {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.bubble-2 {
+    top: 50%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.bubble-3 {
+    top: 80%;
+    left: 40%;
+    animation-delay: 4s;
+}
+
+/* Animation for Floating Bubbles */
+@keyframes bubble-float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.1);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
 /* Navbar */
 .navbar {
     display: flex;

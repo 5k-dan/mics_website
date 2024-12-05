@@ -128,6 +128,83 @@ body {
     }
 }
 
+/* Hero Title with Closer MICS */
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase; /* Ensure all caps */
+}
+
+.hero-title .highlight span {
+    font-size: 4.5rem;
+    font-weight: bold;
+    display: inline-block;
+    letter-spacing: -0.05rem; /* Closer spacing for MICS */
+}
+
+/* Bubble Container */
+.bubble-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1; /* Behind the text */
+}
+
+/* Bubbles */
+.bubble {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    opacity: 0.8;
+    animation: spin-around 8s linear infinite;
+}
+
+/* Position Initial Bubble Points */
+.bubble:nth-child(1) {
+    top: 50%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    top: 20%;
+    left: 40%;
+    animation-delay: 1.5s;
+}
+
+.bubble:nth-child(3) {
+    top: 40%;
+    left: 60%;
+    animation-delay: 3s;
+}
+
+.bubble:nth-child(4) {
+    top: 60%;
+    left: 80%;
+    animation-delay: 4.5s;
+}
+
+.bubble:nth-child(5) {
+    top: 70%;
+    left: 30%;
+    animation-delay: 6s;
+}
+
+/* Circular Animation for Bubbles */
+@keyframes spin-around {
+    0% {
+        transform: rotate(0deg) translate(150px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translate(150px) rotate(-360deg);
+    }
+}
 
 /* Navbar */
 .navbar {

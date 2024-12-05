@@ -55,6 +55,49 @@ body {
     background-color: #2563eb;
     transform: translateY(-5px);
 }
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black; /* Ensure proper background color */
+    padding: 1rem 2rem;
+    position: sticky; /* Keep it fixed at the top */
+    top: 0;
+    z-index: 1000; /* Place above other content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white; /* Ensure visibility */
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem; /* Space between links */
+    list-style: none; /* Remove bullets */
+}
+
+.nav-links li {
+    list-style: none; /* Ensure no bullets */
+}
+
+.nav-links a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Default color */
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s, transform 0.3s; /* Smooth effects */
+}
+
+.nav-links a:hover {
+    color: blue; /* Highlight on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
 
 /* Background Logo */
 .background-logo {

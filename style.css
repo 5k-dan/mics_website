@@ -341,46 +341,76 @@ body {
     background: #E5E7EB;
     color: #1E3A8A;
 }
-/* Contact Section */
-.contact {
-    background-color: #3B82F6; /* Light Blue Background */
-    color: white;
-    padding: 3rem 2rem;
+#contact us section
+.contact-us {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
     text-align: center;
 }
 
-.contact h2 {
-    font-size: 2rem;
+.contact-us .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-us h2 {
+    font-family: 'Dekko', cursive;
+    font-size: 2.5rem;
+    color: #333;
     margin-bottom: 20px;
 }
 
-#contact-form {
+.contact-us p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.social-links {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-#contact-form input, #contact-form textarea, #contact-form button {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#contact-form input:focus, #contact-form textarea:focus {
-    border-color: #2563EB;
+.social-btn img {
+    width: 25px;
+    height: 25px;
 }
 
-#contact-form button {
-    background-color: #2563EB;
-    color: white;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s;
+.social-btn.linkedin {
+    background-color: #0077b5;
 }
 
-#contact-form button:hover {
-    background-color: #1E3A8A;
+.social-btn.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
 }
+
+.social-btn.groupme {
+    background-color: #00aff0;
+}
+
+.social-btn.linktree {
+    background-color: #39e09b;
+}
+
+.social-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 
 /* FAQ Section */
 .faq {

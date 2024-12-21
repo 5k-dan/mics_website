@@ -343,7 +343,7 @@ body {
 }
 #contact us section
 .contact-us {
-    background: linear-gradient(135deg, #2d2d2d, #1c1c1c);
+    background: #fff;
     color: #fff;
     padding: 60px 20px;
     text-align: center;
@@ -358,14 +358,14 @@ body {
 .contact-us h2 {
     font-family: 'Dekko', cursive;
     font-size: 2.8rem;
-    color: #fff;
+    color: #33487E;
     margin-bottom: 15px;
 }
 
 .contact-us p {
     font-size: 1.2rem;
     margin-bottom: 40px;
-    color: #ddd;
+    color: #555;
 }
 
 .social-links {

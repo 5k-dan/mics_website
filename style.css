@@ -343,51 +343,52 @@ body {
 }
 #contact us section
 .contact-us {
-    background-color: #f9f9f9;
-    padding: 50px 20px;
+    background: linear-gradient(135deg, #2d2d2d, #1c1c1c);
+    color: #fff;
+    padding: 60px 20px;
     text-align: center;
 }
 
 .contact-us .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .contact-us h2 {
     font-family: 'Dekko', cursive;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 15px;
 }
 
 .contact-us p {
     font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    color: #ddd;
 }
 
 .social-links {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
 }
 
 .social-btn {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
     text-decoration: none;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 12px 25px;
+    border-radius: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.social-btn img {
-    width: 25px;
-    height: 25px;
+.social-btn i {
+    font-size: 1.5rem;
 }
 
 .social-btn.linkedin {
@@ -395,7 +396,7 @@ body {
 }
 
 .social-btn.instagram {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    background: radial-gradient(circle, #fdf497, #fd5949, #d6249f, #285aeb);
 }
 
 .social-btn.groupme {
@@ -408,9 +409,8 @@ body {
 
 .social-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
-
 
 /* FAQ Section */
 .faq {

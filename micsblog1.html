@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting with Dr. Chita Das</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .back-home {
+            text-align: center;
+            margin: 1rem 0;
+        }
+        .btn {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255));
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn:hover {
+            background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
+            transform: scale(1.05);
+        }
+        .work-with-teams-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .work-with-teams-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 1rem 0;
+            color: #333;
+        }
+        .work-with-teams-content {
+            margin: 2rem auto;
+            line-height: 1.8;
+            font-size: 1rem;
+            color: #555;
+            text-align: justify;
+            padding: 0 1rem;
+        }
+        .work-with-teams-content p {
+            margin-bottom: 1.5rem;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            justify-content: center;
+            margin: 1rem 0;
+            padding: 0 1rem;
+        }
+        .image-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .image-grid img:hover {
+            transform: scale(1.05);
+        }
+        .highlight {
+            color: rgb(0, 157, 255);
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <div class="back-home">
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
 
+    <!-- Blog Post Content -->
+    <div class="work-with-teams-container">
+        <h1 class="work-with-teams-title">How I Work with Teams</h1>
+        <div class="image-grid">
+            <img src="teams1.jpg" alt="Team Collaboration Brainstorming">
+            <img src="teams2.jpg" alt="Hackathon Collaboration">
+            <img src="teams3.jpg" alt="Team Presentation">
+        </div>
+        <div class="work-with-teams-content">
+            <p>
+                Collaboration has always been one of my greatest skills. Throughout the years, I’ve learned how to work well with teams in different situations, from technical projects to community activities.
+            </p>
+            <p>
+                When working in a team, I find <span class="highlight">open conversation</span> very important. I make sure that everyone gets a chance to bring out their thoughts and ideas, which often leads to new and creative solutions.
+            </p>
+            <p>
+                For example, in the previous hackathon, my colleagues and I were able to make a chatbot using each of our skills: some worked on the front part, and others on the AI model. As everyone was clear about task sharing and communication during the project, we ended up creating a much better product than expected.
+            </p>
+            <p>
+                During my first week in college, I was able to participate in the <span class="highlight">Multicultural Engineering Program</span>. One of our activities was working in teams on devising a solution for the Exxon Valdez oil spill of 1989. Of course, the project was very challenging, but it was also quite motivating as we came up with new ways of containing and cleaning up oil spills.
+            </p>
+            <p>
+                My team worked hard to come up with research on the environmental and economic impact of the spill and finally presented a plan that was detailed, including technical and community-based solutions. This experience taught me the value of <span class="highlight">diverse perspectives</span> in solving real-world problems and highlighted the power of collaboration in achieving meaningful results.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

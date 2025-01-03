@@ -364,10 +364,10 @@ body {
 .blog-card {
     background: #fff;
     border: 2px solid #ddd;
-    border-radius: 15px; 
+    border-radius: 15px; /* Rounded corners for the card */
     padding: 1rem;
-    width: 300px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 350px; /* Increased card width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for frame effect */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -377,7 +377,8 @@ body {
 }
 
 .blog-card img {
-    width: 100%;
+    width: 100%; 
+    height: auto; 
     border-radius: 12px; 
     margin-bottom: 1rem;
     object-fit: cover;

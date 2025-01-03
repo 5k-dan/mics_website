@@ -355,46 +355,49 @@ body {
 }
 
 .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: flex;
     justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .blog-card {
     background: #fff;
     border: 2px solid #ddd;
-    border-radius: 15px;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; 
+    padding: 1rem;
+    width: 300px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blog-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
 .blog-card img {
     width: 100%;
-    max-width: 300px;
-    aspect-ratio: 16 / 9; /* Wider aspect ratio for a modern look */
-    object-fit: cover;
-    border-radius: 12px;
+    border-radius: 12px; 
     margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem 0;
 }
 
 .blog-card h3 {
-    font-size: 1.5rem;
-    color: #222;
-    margin: 0.5rem 0;
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 .blog-card p {
     font-size: 1rem;
     color: #666;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .blog-card .btn {
@@ -414,6 +417,7 @@ body {
     background: linear-gradient(to right, #C0C0C0, #1E90FF); 
     transform: scale(1.1);
 }
+
 
 
 /* Contact Section */

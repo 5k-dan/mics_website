@@ -362,9 +362,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
 }
-.blog-img-1 {
-    object-position: center 10%; /* Adjust downward for 'What I Enjoy Doing' */
-}
+
 .btn {
     border-radius: 3rem;
     padding: 0.5rem 1.5rem;
@@ -373,24 +371,6 @@ body {
     font-weight: 500;
     text-wrap: nowrap;
     transition: 0.2s ease-in-out;
-}
-/* Back to Home Button */
-.back-home {
-    margin: 1rem;
-}
-
-.back-home .btn {
-    padding: 0.8rem 1.5rem;
-    background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255));
-    color: white;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.back-home .btn:hover {
-    background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
-    transform: scale(1.05);
 }
 
 .blog-card img {

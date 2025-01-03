@@ -342,55 +342,55 @@ body {
     color: #1E3A8A;
 }
 /* Blog Section */
+/* Blog Section */
 .blog {
     padding: 4rem 2rem;
     background-color: #f9f9f9;
-    text-align: center; 
+    text-align: center; /* Center the entire section content */
 }
 
 .section-title {
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 1rem;
-    text-align: center; 
 }
 
 .blog-grid {
-    display: flex; 
-    justify-content: center; 
-    gap: 2rem; 
+    display: flex; /* Use flexbox for centering and layout */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 2rem; /* Add spacing between cards */
 }
 
 .blog-card {
     background: #fff;
     border: 2px solid #ddd;
-    border-radius: 15px; 
-    padding: 1rem; 
-    width: 600px; 
+    border-radius: 15px; /* Slightly rounded corners */
+    padding: 1rem; /* Adjust padding for balance */
+    width: 400px; /* Adjusted width for a fatter appearance */
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .blog-card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
 }
 
 .blog-card img {
-    width: 100%; 
-    height: auto; 
-    border-radius: 12px; 
+    width: 100%; /* Full width for a proportional image */
+    aspect-ratio: 1 / 1; /* Make the image a square */
+    border-radius: 12px; /* Rounded corners for the image */
     margin-bottom: 1rem;
-    object-fit: cover;
+    object-fit: cover; /* Ensure the image fills the square without stretching */
 }
 
 .card-content {
-    padding: 1rem 0; 
+    padding: 1rem 0; /* Add spacing around text */
 }
 
 .blog-card h3 {
-    font-size: 1.5rem; 
+    font-size: 1.25rem;
     color: #333;
     margin-bottom: 0.5rem;
     font-weight: bold;
@@ -404,7 +404,7 @@ body {
 
 .blog-card .btn {
     display: inline-block;
-    background: linear-gradient(to right, #1E90FF, #C0C0C0); 
+    background: linear-gradient(to right, #1E90FF, #C0C0C0); /* Blue and silver gradient */
     color: #fff;
     padding: 0.5rem 1.5rem;
     border-radius: 30px;
@@ -416,9 +416,10 @@ body {
 }
 
 .blog-card .btn:hover {
-    background: linear-gradient(to right, #C0C0C0, #1E90FF); 
+    background: linear-gradient(to right, #C0C0C0, #1E90FF); /* Reverse gradient */
     transform: scale(1.1);
 }
+
 
 /* Contact Section */
 

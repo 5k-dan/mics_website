@@ -342,27 +342,50 @@ body {
     color: #1E3A8A;
 }
 /* Blog Section */
+/* Blog Section */
+.blog {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.blog-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
 .blog-card {
     background: #fff;
     border: 2px solid #ddd;
-    border-radius: 15px; /* Rounded corners for the card */
+    border-radius: 15px; 
     padding: 1rem;
-    width: 500px; /* Increase card width */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for frame effect */
+    width: 300px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 auto; /* Center the card horizontally */
+}
+
+.blog-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
 .blog-card img {
-    width: 100%; /* Make the image span the full width of the card */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 12px; /* Rounded corners for the image */
+    width: 100%;
+    border-radius: 12px; 
     margin-bottom: 1rem;
     object-fit: cover;
 }
 
 .card-content {
-    padding: 1rem;
+    padding: 1rem 0;
 }
 
 .blog-card h3 {
@@ -370,19 +393,17 @@ body {
     color: #333;
     margin-bottom: 0.5rem;
     font-weight: bold;
-    text-align: center;
 }
 
 .blog-card p {
     font-size: 1rem;
     color: #666;
     margin-bottom: 1rem;
-    text-align: center;
 }
 
 .blog-card .btn {
     display: inline-block;
-    background: linear-gradient(to right, #1E90FF, #C0C0C0); /* Blue and silver gradient */
+    background: linear-gradient(to right, #1E90FF, #C0C0C0); 
     color: #fff;
     padding: 0.5rem 1.5rem;
     border-radius: 30px;
@@ -391,11 +412,10 @@ body {
     font-weight: bold;
     transition: background 0.3s ease, transform 0.3s ease;
     border: none;
-    text-align: center;
 }
 
 .blog-card .btn:hover {
-    background: linear-gradient(to right, #C0C0C0, #1E90FF); /* Reverse gradient */
+    background: linear-gradient(to right, #C0C0C0, #1E90FF); 
     transform: scale(1.1);
 }
 

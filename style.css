@@ -380,7 +380,7 @@ body {
 }
 
 .blog-card img {
-    width: 70%; 
+    width: 35%; 
     height: auto; 
     aspect-ratio: 1 / 1; 
     object-fit: cover; 

@@ -374,7 +374,60 @@ body {
     text-wrap: nowrap;
     transition: 0.2s ease-in-out;
 }
+/* Back to Home Button */
+.back-home {
+    margin: 1rem;
+}
 
+.back-home .btn {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255));
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.back-home .btn:hover {
+    background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
+    transform: scale(1.05);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.blog-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.blog-card p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.blog-card .btn {
+    color: white;
+    background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255));
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.blog-card .btn:hover {
+    background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
+    transform: scale(1.05);
+}
+
+.blog-card:hover {
+    transform: scale(1.05);
+}
 /* Contact Section */
 
 .contact-us {

@@ -399,7 +399,7 @@ body {
 
 .blog-card .btn {
     display: inline-block;
-    background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255));
+    background: linear-gradient(to right, #1E90FF, #C0C0C0); 
     color: #fff;
     padding: 0.5rem 1.5rem;
     border-radius: 30px;
@@ -407,12 +407,14 @@ body {
     font-size: 1rem;
     font-weight: bold;
     transition: background 0.3s ease, transform 0.3s ease;
+    border: none;
 }
 
 .blog-card .btn:hover {
-    background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
+    background: linear-gradient(to right, #C0C0C0, #1E90FF); 
     transform: scale(1.1);
 }
+
 
 /* Contact Section */
 

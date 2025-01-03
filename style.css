@@ -345,12 +345,12 @@ body {
 .blog {
     padding: 4rem 2rem;
     background-color: #f9f9f9;
+    text-align: center;
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #333;
-    text-align: center;
     margin-bottom: 1rem;
 }
 
@@ -358,49 +358,60 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    justify-content: center;
 }
 
 .blog-card {
     background: #fff;
     border: 2px solid #ddd;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 1.5rem;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .blog-card img {
     width: 100%;
     max-width: 300px;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 9; /* Wider aspect ratio for a modern look */
     object-fit: cover;
-    border-radius: 8px;
-    margin: 0 auto;
+    border-radius: 12px;
+    margin-bottom: 1rem;
 }
 
 .blog-card h3 {
     font-size: 1.5rem;
-    margin: 1rem 0;
+    color: #222;
+    margin: 0.5rem 0;
 }
 
 .blog-card p {
-    color: #666;
     font-size: 1rem;
-    margin-bottom: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
 }
 
 .blog-card .btn {
-    color: white;
+    display: inline-block;
     background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255));
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
     text-decoration: none;
-    transition: background 0.2s ease;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .blog-card .btn:hover {
     background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 /* Contact Section */

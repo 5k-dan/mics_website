@@ -17,17 +17,20 @@
         }
         .btn {
             padding: 0.8rem 1.5rem;
-            background: linear-gradient(to right, rgb(0, 157, 255), rgb(255, 0, 255));
+            background: linear-gradient(to right, #1E90FF, #C0C0C0); /* Blue and Silver Gradient */
             color: white;
             border-radius: 20px;
             text-decoration: none;
             font-size: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, transform 0.3s ease;
         }
+        
         .btn:hover {
-            background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 157, 255));
+            background: linear-gradient(to right, #C0C0C0, #1E90FF); /* Reverse Blue and Silver Gradient */
             transform: scale(1.05);
         }
+
         .work-with-teams-container {
             max-width: 900px;
             margin: 2rem auto;

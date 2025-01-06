@@ -8,8 +8,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Swipe effect for Upcoming Events
+// Swipe effect for Upcoming Events and Executive Board
 document.addEventListener("DOMContentLoaded", () => {
+  // Upcoming Events Section
   const eventsContainer = document.getElementById("events-container");
   const eventCards = Array.from(eventsContainer.children); // All event cards
   const prevBtn = document.getElementById("prev-btn");
@@ -73,8 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   showPage(currentPage); // Initialize the first page
 
- // Swipe effect for Executive Board
-document.addEventListener("DOMContentLoaded", () => {
+  // Executive Board Section
   const boardContainer = document.getElementById("board-container");
   const boardCards = Array.from(boardContainer.children); // All board cards
   const boardPrevBtn = document.getElementById("board-prev-btn");

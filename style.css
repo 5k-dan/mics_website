@@ -343,11 +343,12 @@ body {
 
 /* Pagination Circles */
 .pagination {
+    position: relative;
+    top: -40px; /* Adjust this value to position the circles above the cards */
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 10px;
 }
 
 .pagination-circle {
@@ -362,6 +363,7 @@ body {
 .pagination-circle.active {
     background-color: #1e3a8a;
 }
+
 
 /* Blog Section */
 .blog {

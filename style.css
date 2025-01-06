@@ -24,7 +24,7 @@ body {
 /* Slide-in Animation for "Hello" */
 @keyframes slide-in {
     from {
-        transform: translateX(-150%); /* Start off-screen to the left */
+        transform: translateX(-200px); /* Start slightly off-screen */
         opacity: 0; /* Fully transparent */
     }
     to {
@@ -36,11 +36,11 @@ body {
 /* Styling for the Hello Section */
 .hero-hello {
     position: relative;
-    font-size: 6rem; /* Matches font size with Welcome to MICS */
+    font-size: 7rem; /* Increased font size for better visibility */
     font-weight: bold;
     color: CornflowerBlue; /* Set the correct color */
     margin: 0;
-    animation: slide-in 1.5s ease-out; /* Smooth slide-in animation */
+    animation: slide-in 1.2s ease-out forwards; /* Smooth slide-in animation */
 }
 
 /* Styling for the Welcome to MICS Section */
@@ -149,7 +149,7 @@ body {
     }
 
     .hero-hello {
-        font-size: 3rem; /* Smaller font size for mobile */
+        font-size: 5rem; /* Adjust font size for mobile */
         margin-bottom: 10px; /* Add some space below "Hello" */
     }
 

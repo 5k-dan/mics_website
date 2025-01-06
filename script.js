@@ -34,25 +34,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Show the current page of events
   function showPage(page) {
+    // Calculate the range of events to display
     const startIndex = page * eventsPerPage;
     const endIndex = startIndex + eventsPerPage;
 
+    // Update visibility of event cards
     eventCards.forEach((card, index) => {
       if (index >= startIndex && index < endIndex) {
-        card.style.display = "block";
+        card.style.display = "block"; // Show cards for the current page
       } else {
-        card.style.display = "none";
+        card.style.display = "none"; // Hide all other cards
       }
     });
 
+    // Update active pagination circle
     document.querySelectorAll(".pagination-circle").forEach((circle, index) => {
       circle.classList.toggle("active", index === page);
     });
 
+    // Enable/disable navigation buttons
     prevBtn.disabled = page === 0;
     nextBtn.disabled = page === totalPages - 1;
   }
 
+  // Go to the next page
   function nextPage() {
     if (currentPage < totalPages - 1) {
       currentPage++;
@@ -60,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Go to the previous page
   function prevPage() {
     if (currentPage > 0) {
       currentPage--;
@@ -67,75 +73,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Go to a specific page
   function goToPage(page) {
     currentPage = page;
     showPage(currentPage);
   }
 
+  // Add event listeners to navigation buttons
   nextBtn.addEventListener("click", nextPage);
   prevBtn.addEventListener("click", prevPage);
 
+  // Initialize the first page
   showPage(currentPage);
-});
-
-// Swipe effect for Executive Board
-document.addEventListener("DOMContentLoaded", () => {
-  const boardContainer = document.getElementById("board-container");
-  const boardCards = Array.from(boardContainer.children); // All board member cards
-  const boardPrevBtn = document.getElementById("board-prev-btn");
-  const boardNextBtn = document.getElementById("board-next-btn");
-  const boardPagination = document.getElementById("board-pagination");
-
-  const cardsPerPage = 1; // Only one card is visible at a time
-  const totalBoardPages = boardCards.length;
-  let currentBoardPage = 0;
-
-  // Ensure container width matches the total number of cards
-  boardContainer.style.width = `${100 * totalBoardPages}%`;
-
-  // Create pagination circles for board section
-  for (let i = 0; i < totalBoardPages; i++) {
-    const circle = document.createElement("div");
-    circle.classList.add("pagination-circle");
-    if (i === 0) circle.classList.add("active");
-    circle.dataset.page = i;
-    circle.addEventListener("click", () => goToBoardPage(i));
-    boardPagination.appendChild(circle);
-  }
-
-  function showBoardPage(page) {
-    const offset = -page * 100; // Slide by 100% of container width
-    boardContainer.style.transform = `translateX(${offset}%)`;
-
-    document.querySelectorAll("#board-pagination .pagination-circle").forEach((circle, index) => {
-      circle.classList.toggle("active", index === page);
-    });
-
-    boardPrevBtn.disabled = page === 0;
-    boardNextBtn.disabled = page === totalBoardPages - 1;
-  }
-
-  function nextBoardPage() {
-    if (currentBoardPage < totalBoardPages - 1) {
-      currentBoardPage++;
-      showBoardPage(currentBoardPage);
-    }
-  }
-
-  function prevBoardPage() {
-    if (currentBoardPage > 0) {
-      currentBoardPage--;
-      showBoardPage(currentBoardPage);
-    }
-  }
-
-  function goToBoardPage(page) {
-    currentBoardPage = page;
-    showBoardPage(currentBoardPage);
-  }
-
-  boardNextBtn.addEventListener("click", nextBoardPage);
-  boardPrevBtn.addEventListener("click", prevBoardPage);
-
-  showBoardPage(currentBoardPage); // Initialize the first page
 });

@@ -80,6 +80,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const boardNextBtn = document.getElementById("board-next-btn");
   const boardPagination = document.getElementById("board-pagination");
   let currentBoardIndex = 0;
+  boardContainer.style.width = `${boardCards.length * 100}%`;
+  boardCards.forEach((card) => {
+    const img = card.querySelector("img");
+    if (img && !img.complete) {
+        img.onload = () => updateBoardView();
+    }
+});
 
   // Initialize pagination
   boardCards.forEach((_, i) => {
@@ -99,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     boardPrevBtn.disabled = currentBoardIndex === 0;
     boardNextBtn.disabled = currentBoardIndex === boardCards.length - 1;
+    
   }
 
   function goToBoardPage(index) {

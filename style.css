@@ -26,7 +26,7 @@ body {
 .hero-hello {
     font-size: 4rem;
     font-weight: bold;
-    color: #3b82f6;
+    color: linear-gradient(135deg, #1e3a8a, #6b21a8);
     margin: 0 0 1rem 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }

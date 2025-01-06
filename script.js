@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   nextBtn.addEventListener("click", nextPage);
   prevBtn.addEventListener("click", prevPage);
 
-  showPage(currentPage);
+  showPage(currentPage); // Initialize the first page
 });
 
 // Swipe effect for Executive Board
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showBoardPage(page) {
-    const offset = -page * 100; // Translate by 100% for each page
+    const offset = -page * 100; // Slide by 100% for each page
     boardContainer.style.transform = `translateX(${offset}%)`;
 
     document.querySelectorAll("#board-pagination .pagination-circle").forEach((circle, index) => {
@@ -144,4 +144,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   showBoardPage(currentBoardPage); // Initialize the first page
 });
-

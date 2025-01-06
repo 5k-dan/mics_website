@@ -256,6 +256,46 @@ body {
         max-width: 300px; /* Adjust size for smaller screens */
     }
 }
+/* Typewriter Animation for Hello */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%; /* Reveal the full text */
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent; /* Makes the caret blink */
+    }
+}
+
+.hero-hello .hero-title {
+    display: inline-block;
+    overflow: hidden; /* Hides the overflowing text */
+    white-space: nowrap; /* Prevents text from wrapping */
+    border-right: 3px solid CornflowerBlue; /* Simulates the caret */
+    width: 0; /* Start with no width */
+    animation: typewriter 3s steps(12, end), blink-caret 0.5s step-end infinite;
+}
+
+/* Slide-in Animation for Welcome to MICS */
+@keyframes slide-in {
+    from {
+        transform: translateX(100%); /* Start off-screen */
+        opacity: 0; /* Fully transparent */
+    }
+    to {
+        transform: translateX(0); /* Slide into position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+.hero-content .hero-title {
+    animation: slide-in 1s ease-out;
+}
 
 
 

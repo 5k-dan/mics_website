@@ -90,6 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalBoardPages = boardCards.length;
   let currentBoardPage = 0;
 
+  // Ensure container width matches the total number of cards
+  boardContainer.style.width = `${100 * totalBoardPages}%`;
+
   // Create pagination circles for board section
   for (let i = 0; i < totalBoardPages; i++) {
     const circle = document.createElement("div");

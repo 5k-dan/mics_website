@@ -21,36 +21,27 @@ body {
     gap: 20px; /* Adds space between "Hello" and "Welcome to MICS" */
 }
 
-/* Slide-in Animation for "Hello" */
-@keyframes slide-in {
-    from {
-        transform: translateX(-200px); /* Start slightly off-screen */
-        opacity: 0; /* Fully transparent */
-    }
-    to {
-        transform: translateX(0); /* Lands in its original position */
-        opacity: 1; /* Fully visible */
-    }
-}
-
 /* Styling for the Hello Section */
 .hero-hello {
     position: relative;
-    font-size: 7rem; /* Increased font size for better visibility */
+    left: -75px; /* Moves "Hello" 100px to the left */
+    font-size: 6rem;
     font-weight: bold;
-    color: CornflowerBlue; /* Set the correct color */
-    margin: 0;
-    animation: slide-in 1.2s ease-out forwards; /* Smooth slide-in animation */
+    color: Aqua;
+    margin: 0; /* Keeps spacing clean */
 }
+
 
 /* Styling for the Welcome to MICS Section */
 .hero-content {
     text-align: center;
 }
 
+
+}
 /* Hero Title with Billboard Effect */
 .hero-title {
-    font-size: 6rem; /* Matches font size with "Hello" */
+    font-size: 6rem; /* Increased font size for billboard effect */
     font-weight: bold;
     color: white;
     margin: 0;
@@ -149,7 +140,8 @@ body {
     }
 
     .hero-hello {
-        font-size: 5rem; /* Adjust font size for mobile */
+        font-size: 3rem; /* Smaller font size for mobile */
+        left: 0; /* Reset offset */
         margin-bottom: 10px; /* Add some space below "Hello" */
     }
 
@@ -175,7 +167,6 @@ body {
         height: 30px;
     }
 }
-
 /* Navbar */
 .navbar {
     display: flex;

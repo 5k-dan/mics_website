@@ -393,9 +393,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    position: absolute; /* Ensures precise positioning */
-    top: 60%; /* Adjust the percentage to move the buttons down */
-    transform: translateY(-50%); /* Centers the button vertically */
+    top: 50px;
 }
 
 

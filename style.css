@@ -10,26 +10,29 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* Enables flexbox for horizontal alignment */
+    flex-direction: row; /* Aligns items in a row (horizontal) */
+    align-items: center; /* Vertically centers the elements */
+    justify-content: center; /* Horizontally centers the elements */
     text-align: center;
     height: 100vh;
     background-color: #121212;
     overflow: hidden;
+    gap: 20px; /* Adds space between "Hello" and "Welcome to MICS" */
 }
+
+/* Styling for the Hello Section */
 .hero-hello {
-    position: relative;
-    margin-top: 700px;  /* Brings the hello button down */
-    right: 10%;  /* Moves it left */
+    font-size: 6rem;
+    font-weight: bold;
+    color: white;
+    margin: 0; /* Removes unnecessary margin */
 }
+
+/* Styling for the Welcome to MICS Section */
 .hero-content {
-    position: relative;
-    left: 20%;
-    down: 30%
-
-
+    text-align: center;
+}
 
 
 }

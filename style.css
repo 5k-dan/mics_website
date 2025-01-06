@@ -21,44 +21,25 @@ body {
     gap: 20px; /* Adds space between "Hello" and "Welcome to MICS" */
 }
 
-/* Styling for the Hello Section with Typewriter Animation */
+/* Styling for the Hello Section */
 .hero-hello {
     position: relative;
-    left: -75px; /* Moves "Hello" slightly to the left */
+    left: -75px; /* Moves "Hello" 100px to the left */
     font-size: 6rem;
     font-weight: bold;
     color: Aqua;
-    margin: 0;
-    display: inline-block;
-    overflow: hidden; /* Hides overflowing text for the typewriter effect */
-    white-space: nowrap; /* Prevents text wrapping */
-    border-right: 3px solid Aqua; /* Simulates the blinking caret */
-    width: 0; /* Start with no width (hidden text) */
-    animation: typewriter 4s steps(12, end) 1s forwards, blink-caret 0.75s step-end infinite;
+    margin: 0; /* Keeps spacing clean */
 }
 
-/* Keyframes for Typewriter Animation */
-@keyframes typewriter {
-    from {
-        width: 0; /* Text starts hidden */
-    }
-    to {
-        width: 100%; /* Reveal the full text */
-    }
-}
-
-/* Keyframes for Blinking Caret Animation */
-@keyframes blink-caret {
-    50% {
-        border-color: transparent; /* Makes the caret blink */
-    }
-}
 
 /* Styling for the Welcome to MICS Section */
 .hero-content {
     text-align: center;
 }
 
+
+}
+/* Hero Title with Billboard Effect */
 .hero-title {
     font-size: 6rem; /* Increased font size for billboard effect */
     font-weight: bold;
@@ -186,6 +167,7 @@ body {
         height: 30px;
     }
 }
+
 /* Navbar */
 .navbar {
     display: flex;

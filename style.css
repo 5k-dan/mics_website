@@ -21,8 +21,8 @@ body {
 }
 .hero-hello {
     position: relative;
-    margin-top: 400px;  /* Brings the hello button down */
-    left: 20%;  /* Moves it right */
+    margin-top: 900px;  /* Brings the hello button down */
+    right: 20%;  /* Moves it left */
 }
 .hero-content {
     position: relative;

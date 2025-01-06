@@ -3,9 +3,8 @@ body {
     font-family: 'Dekko', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: linear-gradient(135deg, #1e3a8a, #6b21a8); /* Very Light Gray */
+    background-color: #121212;
     color: white;
-    background: linear-gradient(135deg, #1e3a8a, #6b21a8);
 }
 
 /* Hero Section */
@@ -214,18 +213,18 @@ body {
 .about-us {
     padding: 3rem 2rem;
     text-align: center;
-    color: #1f2937; /* Dark Gray Text Color */
+    background-color: #F3F4F6; /* Subtle Light Gray */
+    color: #1E293B; /* Darker Text Color */
     border-radius: 10px;
     margin: 2rem auto;
     max-width: 900px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(135deg, #1e3a8a, #6b21a8);
 }
 
 .about-us h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
-    color: #2563eb; /* Bright Blue for Heading */
+    color: #1E3A8A;
     font-weight: bold;
 }
 
@@ -239,19 +238,14 @@ body {
 
 .about-content p {
     margin: 0;
-    color: #374151; /* Medium Gray for Text */
+    color: #334155;
     text-align: justify;
-}
-
-/* Page Background (Parent Section) */
-body {
-    background-color: linear-gradient(135deg, #1e3a8a, #6b21a8)
 }
 
 
 /* Executive Board Section */
 .e-board {
-    background: linear-gradient(135deg, #1e3a8a, #6b21a8);
+    background-color: #F5F5F5;
     padding: 50px 20px;
     text-align: center;
 }
@@ -343,7 +337,7 @@ body {
 /* Events Section */
 .events-section {
     padding: 50px;
-    background: linear-gradient(135deg, #1e3a8a, #6b21a8);
+    background: white;
     color: #333;
     text-align: center;
 }
@@ -386,7 +380,7 @@ body {
 /* Blog Section */
 .blog {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #1e3a8a, #6b21a8);
+    background-color: #f9f9f9;
     text-align: center; /* Center the entire section content */
 }
 
@@ -465,7 +459,7 @@ body {
 /* Contact Section */
 
 .contact-us {
-    background: linear-gradient(135deg, #1e3a8a, #6b21a8);
+    background: #fff;
     color: #fff;
     padding: 60px 20px;
     text-align: center;

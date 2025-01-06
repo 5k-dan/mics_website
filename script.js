@@ -86,8 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const boardNextBtn = document.getElementById("board-next-btn");
   const boardPagination = document.getElementById("board-pagination");
 
-  const cardsPerPage = 3;
-  const totalBoardPages = Math.ceil(boardCards.length / cardsPerPage);
+  const cardsPerPage = 1; // Only one card is visible at a time
+  const totalBoardPages = boardCards.length;
   let currentBoardPage = 0;
 
   // Create pagination circles for board section
@@ -134,5 +134,5 @@ document.addEventListener("DOMContentLoaded", () => {
   boardNextBtn.addEventListener("click", nextBoardPage);
   boardPrevBtn.addEventListener("click", prevBoardPage);
 
-  showBoardPage(currentBoardPage);
+  showBoardPage(currentBoardPage); // Initialize the first page
 });

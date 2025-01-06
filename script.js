@@ -1,146 +1,75 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth',
-    });
-  });
-});
-
-// Swipe effect for upcoming events
 document.addEventListener("DOMContentLoaded", () => {
-  const eventsContainer = document.getElementById("events-container");
-  const eventCards = Array.from(eventsContainer.children); // All event cards
-  const prevBtn = document.getElementById("prev-btn");
-  const nextBtn = document.getElementById("next-btn");
-  const pagination = document.getElementById("pagination");
-
-  const eventsPerPage = 3;
-  let currentPage = 0;
-
-  // Calculate total number of pages
-  const totalPages = Math.ceil(eventCards.length / eventsPerPage);
-
-  // Create pagination circles
-  for (let i = 0; i < totalPages; i++) {
-    const circle = document.createElement("div");
-    circle.classList.add("pagination-circle");
-    if (i === 0) circle.classList.add("active");
-    circle.dataset.page = i;
-    circle.addEventListener("click", () => goToPage(i));
-    pagination.appendChild(circle);
-  }
-
-  // Show the current page of events
-  function showPage(page) {
-    const startIndex = page * eventsPerPage;
-    const endIndex = startIndex + eventsPerPage;
-
-    eventCards.forEach((card, index) => {
-      if (index >= startIndex && index < endIndex) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
-    });
-
-    document.querySelectorAll(".pagination-circle").forEach((circle, index) => {
-      circle.classList.toggle("active", index === page);
-    });
-
-    prevBtn.disabled = page === 0;
-    nextBtn.disabled = page === totalPages - 1;
-  }
-
-  function nextPage() {
-    if (currentPage < totalPages - 1) {
-      currentPage++;
-      showPage(currentPage);
-    }
-  }
-
-  function prevPage() {
-    if (currentPage > 0) {
-      currentPage--;
-      showPage(currentPage);
-    }
-  }
-
-  function goToPage(page) {
-    currentPage = page;
-    showPage(currentPage);
-  }
-
-  nextBtn.addEventListener("click", nextPage);
-  prevBtn.addEventListener("click", prevPage);
-
-  showPage(currentPage); // Initialize the first page
-});
-
-// Swipe effect for Executive Board
-document.addEventListener("DOMContentLoaded", () => {
+  // Swipe effect for Executive Board
   const boardContainer = document.getElementById("board-container");
-  const boardCards = Array.from(boardContainer.children); // All board member cards
+  const boardCards = Array.from(boardContainer.children); // All board cards
   const boardPrevBtn = document.getElementById("board-prev-btn");
   const boardNextBtn = document.getElementById("board-next-btn");
   const boardPagination = document.getElementById("board-pagination");
+  let currentBoardIndex = 0;
 
-  const totalBoardPages = boardCards.length;
-  let currentBoardPage = 0;
-
-  // Set the container's width dynamically to fit all cards
-  boardContainer.style.width = `${totalBoardPages * 100}%`;
-
-  // Set each card's width dynamically
-  boardCards.forEach(card => {
-    card.style.width = "100%"; // One card per view
-    card.style.flex = "0 0 100%";
-  });
-
-  // Create pagination circles for board section
-  for (let i = 0; i < totalBoardPages; i++) {
+  // Initialize pagination for board
+  boardCards.forEach((_, i) => {
     const circle = document.createElement("div");
     circle.classList.add("pagination-circle");
     if (i === 0) circle.classList.add("active");
-    circle.dataset.page = i;
     circle.addEventListener("click", () => goToBoardPage(i));
     boardPagination.appendChild(circle);
-  }
+  });
 
-  function showBoardPage(page) {
-    const offset = -page * 100; // Slide by 100% for each page
-    boardContainer.style.transform = `translateX(${offset}%)`;
-
-    document.querySelectorAll("#board-pagination .pagination-circle").forEach((circle, index) => {
-      circle.classList.toggle("active", index === page);
+  function updateBoardView() {
+    boardContainer.style.transform = `translateX(-${currentBoardIndex * 100}%)`;
+    document.querySelectorAll(".pagination-circle").forEach((circle, i) => {
+      circle.classList.toggle("active", i === currentBoardIndex);
     });
-
-    boardPrevBtn.disabled = page === 0;
-    boardNextBtn.disabled = page === totalBoardPages - 1;
+    boardPrevBtn.disabled = currentBoardIndex === 0;
+    boardNextBtn.disabled = currentBoardIndex === boardCards.length - 1;
   }
 
-  function nextBoardPage() {
-    if (currentBoardPage < totalBoardPages - 1) {
-      currentBoardPage++;
-      showBoardPage(currentBoardPage);
-    }
+  function goToBoardPage(index) {
+    currentBoardIndex = index;
+    updateBoardView();
   }
 
-  function prevBoardPage() {
-    if (currentBoardPage > 0) {
-      currentBoardPage--;
-      showBoardPage(currentBoardPage);
-    }
+  boardPrevBtn.addEventListener("click", () => {
+    if (currentBoardIndex > 0) currentBoardIndex--;
+    updateBoardView();
+  });
+
+  boardNextBtn.addEventListener("click", () => {
+    if (currentBoardIndex < boardCards.length - 1) currentBoardIndex++;
+    updateBoardView();
+  });
+
+  updateBoardView();
+
+  // Swipe effect for Upcoming Events
+  const eventsContainer = document.getElementById("events-container");
+  const eventCards = Array.from(eventsContainer.children); // All event cards
+  const eventsPerPage = 3;
+  let currentEventPage = 0;
+
+  document.getElementById("prev-btn").addEventListener("click", () => {
+    if (currentEventPage > 0) currentEventPage--;
+    updateEventView();
+  });
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    if ((currentEventPage + 1) * eventsPerPage < eventCards.length) currentEventPage++;
+    updateEventView();
+  });
+
+  function updateEventView() {
+    eventCards.forEach((card, index) => {
+      card.style.display =
+        index >= currentEventPage * eventsPerPage &&
+        index < (currentEventPage + 1) * eventsPerPage
+          ? "block"
+          : "none";
+    });
+    document.getElementById("prev-btn").disabled = currentEventPage === 0;
+    document.getElementById("next-btn").disabled =
+      (currentEventPage + 1) * eventsPerPage >= eventCards.length;
   }
 
-  function goToBoardPage(page) {
-    currentBoardPage = page;
-    showBoardPage(currentBoardPage);
-  }
-
-  boardNextBtn.addEventListener("click", nextBoardPage);
-  boardPrevBtn.addEventListener("click", prevBoardPage);
-
-  showBoardPage(currentBoardPage); // Initialize the first page
+  updateEventView();
 });

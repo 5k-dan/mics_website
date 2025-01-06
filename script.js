@@ -1,9 +1,9 @@
 // Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth',
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
     });
   });
 });
@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     pagination.appendChild(circle);
   }
 
-  // Show the current page of events
   function showPage(page) {
     const startIndex = page * eventsPerPage;
     const endIndex = startIndex + eventsPerPage;
@@ -80,15 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const boardNextBtn = document.getElementById("board-next-btn");
   const boardPagination = document.getElementById("board-pagination");
   let currentBoardIndex = 0;
+
+  // Ensure all cards have appropriate width and visibility
   boardContainer.style.width = `${boardCards.length * 100}%`;
   boardCards.forEach((card) => {
     const img = card.querySelector("img");
     if (img && !img.complete) {
-        img.onload = () => updateBoardView();
+      img.onload = () => updateBoardView();
     }
-});
+  });
 
-  // Initialize pagination
+  // Initialize pagination for board
   boardCards.forEach((_, i) => {
     const circle = document.createElement("div");
     circle.classList.add("pagination-circle");
@@ -99,14 +100,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateBoardView() {
     boardContainer.style.transform = `translateX(-${currentBoardIndex * 100}%)`;
-    boardContainer.style.width = `${boardCards.length * 100}%`; // Ensure container width is card count * 100%
+    boardContainer.style.transition = "transform 0.5s ease-in-out";
 
     document.querySelectorAll("#board-pagination .pagination-circle").forEach((circle, i) => {
       circle.classList.toggle("active", i === currentBoardIndex);
     });
+
     boardPrevBtn.disabled = currentBoardIndex === 0;
     boardNextBtn.disabled = currentBoardIndex === boardCards.length - 1;
-    
+
+    boardCards.forEach((card, index) => {
+      card.style.display = index === currentBoardIndex ? "block" : "none";
+    });
   }
 
   function goToBoardPage(index) {

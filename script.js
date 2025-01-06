@@ -8,10 +8,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Swipe effect for Upcoming Events
 document.addEventListener("DOMContentLoaded", () => {
-  // ==============================
-  // Upcoming Events Section Logic
-  // ==============================
   const eventsContainer = document.getElementById("events-container");
   const eventCards = Array.from(eventsContainer.children); // All event cards
   const prevBtn = document.getElementById("prev-btn");
@@ -73,67 +71,69 @@ document.addEventListener("DOMContentLoaded", () => {
   nextBtn.addEventListener("click", nextPage);
   prevBtn.addEventListener("click", prevPage);
 
-  // Initialize the first page
-  showPage(currentPage);
+  showPage(currentPage); // Initialize the first page
 
-  // ==============================
-  // Executive Board Section Logic
-  // ==============================
+  // Swipe effect for Executive Board
   const boardContainer = document.getElementById("board-container");
   const boardCards = Array.from(boardContainer.children); // All board cards
   const boardPrevBtn = document.getElementById("board-prev-btn");
   const boardNextBtn = document.getElementById("board-next-btn");
   const boardPagination = document.getElementById("board-pagination");
 
-  let currentBoardIndex = 0;
+  const boardsPerPage = 1; // Display 1 card at a time
+  let currentBoardPage = 0;
 
-  // Ensure the container's width matches the number of cards
-  boardContainer.style.width = `${boardCards.length * 100}%`;
+  // Calculate total number of pages for the board
+  const totalBoardPages = Math.ceil(boardCards.length / boardsPerPage);
 
-  // Adjust card width
-  boardCards.forEach(card => {
-    card.style.width = "100%"; // One card per view
-    card.style.flex = "0 0 100%";
-  });
-
-  // Initialize pagination for the board
-  boardCards.forEach((_, i) => {
+  // Create pagination circles for the board
+  for (let i = 0; i < totalBoardPages; i++) {
     const circle = document.createElement("div");
     circle.classList.add("pagination-circle");
     if (i === 0) circle.classList.add("active");
+    circle.dataset.page = i;
     circle.addEventListener("click", () => goToBoardPage(i));
     boardPagination.appendChild(circle);
-  });
+  }
 
-  function updateBoardView() {
-    boardContainer.style.transform = `translateX(-${currentBoardIndex * 100}%)`;
+  // Show the current page of board cards
+  function showBoardPage(page) {
+    const startIndex = page * boardsPerPage;
+    const endIndex = startIndex + boardsPerPage;
 
-    document.querySelectorAll("#board-pagination .pagination-circle").forEach((circle, i) => {
-      circle.classList.toggle("active", i === currentBoardIndex);
+    boardCards.forEach((card, index) => {
+      card.style.display = index >= startIndex && index < endIndex ? "block" : "none";
     });
 
-    boardPrevBtn.disabled = currentBoardIndex === 0;
-    boardNextBtn.disabled = currentBoardIndex === boardCards.length - 1;
+    document.querySelectorAll("#board-pagination .pagination-circle").forEach((circle, index) => {
+      circle.classList.toggle("active", index === page);
+    });
+
+    boardPrevBtn.disabled = page === 0;
+    boardNextBtn.disabled = page === totalBoardPages - 1;
   }
 
-  function goToBoardPage(index) {
-    currentBoardIndex = index;
-    updateBoardView();
+  function nextBoardPage() {
+    if (currentBoardPage < totalBoardPages - 1) {
+      currentBoardPage++;
+      showBoardPage(currentBoardPage);
+    }
   }
 
-  boardPrevBtn.addEventListener("click", () => {
-    if (currentBoardIndex > 0) {
-      currentBoardIndex--;
-      updateBoardView();
+  function prevBoardPage() {
+    if (currentBoardPage > 0) {
+      currentBoardPage--;
+      showBoardPage(currentBoardPage);
     }
-  });
+  }
 
-  boardNextBtn.addEventListener("click", () => {
-    if (currentBoardIndex < boardCards.length - 1) {
-      currentBoardIndex++;
-      updateBoardView();
-    }
-  });
+  function goToBoardPage(page) {
+    currentBoardPage = page;
+    showBoardPage(currentBoardPage);
+  }
 
-  updateBoardView(); // Initialize the first card
+  boardNextBtn.addEventListener("click", nextBoardPage);
+  boardPrevBtn.addEventListener("click", prevBoardPage);
+
+  showBoardPage(currentBoardPage); // Initialize the first board card
 });

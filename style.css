@@ -332,31 +332,7 @@ body {
     right: 10px;
 }
 
-/* Pagination Circles */
-.pagination {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-}
 
-.pagination-circle {
-    width: 10px;
-    height: 10px;
-    background-color: #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.pagination-circle.active {
-    background-color: #1e3a8a;
-}
-
-/* Pagination for Executive Board */
-#board-pagination {
-    margin-top: 40px; /* Adjust the value to move the circles further down */
-}
 
 /* Events Section */
 .events-section {
@@ -399,28 +375,7 @@ body {
     background-color: #6b21a8;
 }
 
-/* Pagination Circles */
-.pagination {
-    position: relative;
-    top: -70px; /* Adjust this value to position the circles above the cards */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
 
-.pagination-circle {
-    width: 10px;
-    height: 10px;
-    background-color: #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.pagination-circle.active {
-    background-color: #1e3a8a;
-}
 
 /* Blog Section */
 .blog {

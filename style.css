@@ -19,6 +19,10 @@ body {
     background-color: #121212;
     overflow: hidden;
 }
+.hero-hello {
+    position: relative;
+    margin-top: 100px;  /* Brings the hello button down */
+}
 .hero-content {
     position: relative;
     left: 20%;

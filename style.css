@@ -344,7 +344,7 @@ body {
 /* Pagination Circles */
 .pagination {
     position: relative;
-    top: -80px; /* Adjust this value to position the circles above the cards */
+    top: -70px; /* Adjust this value to position the circles above the cards */
     display: flex;
     justify-content: center;
     align-items: center;

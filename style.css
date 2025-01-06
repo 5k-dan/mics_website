@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: linear-gradient(135deg, #1e3a8a, #6b21a8); /* Very Light Gray */
     color: white;
+    background: linear-gradient(135deg, #1e3a8a, #6b21a8);
 }
 
 /* Hero Section */
@@ -213,12 +214,12 @@ body {
 .about-us {
     padding: 3rem 2rem;
     text-align: center;
-    background-color: #ffffff; /* White Background */
     color: #1f2937; /* Dark Gray Text Color */
     border-radius: 10px;
     margin: 2rem auto;
     max-width: 900px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #1e3a8a, #6b21a8);
 }
 
 .about-us h2 {
@@ -250,7 +251,7 @@ body {
 
 /* Executive Board Section */
 .e-board {
-    background-color: #F5F5F5;
+    background: linear-gradient(135deg, #1e3a8a, #6b21a8);
     padding: 50px 20px;
     text-align: center;
 }
@@ -342,7 +343,7 @@ body {
 /* Events Section */
 .events-section {
     padding: 50px;
-    background: white;
+    background: linear-gradient(135deg, #1e3a8a, #6b21a8);
     color: #333;
     text-align: center;
 }
@@ -385,7 +386,7 @@ body {
 /* Blog Section */
 .blog {
     padding: 4rem 2rem;
-    background-color: #f9f9f9;
+    background: linear-gradient(135deg, #1e3a8a, #6b21a8);
     text-align: center; /* Center the entire section content */
 }
 
@@ -464,7 +465,7 @@ body {
 /* Contact Section */
 
 .contact-us {
-    background: #fff;
+    background: linear-gradient(135deg, #1e3a8a, #6b21a8);
     color: #fff;
     padding: 60px 20px;
     text-align: center;

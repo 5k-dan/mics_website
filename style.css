@@ -213,8 +213,8 @@ body {
 .about-us {
     padding: 3rem 2rem;
     text-align: center;
-    background-color: BlueViolet; /* Subtle Light Gray */
-    color: Orchid; /* Darker Text Color */
+    background-color: #f9fafb; /* Light Gray Background */
+    color: #1f2937; /* Dark Gray Text Color */
     border-radius: 10px;
     margin: 2rem auto;
     max-width: 900px;
@@ -222,9 +222,9 @@ body {
 }
 
 .about-us h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #1E3A8A;
+    color: #2563eb; /* Bright Blue for Heading */
     font-weight: bold;
 }
 
@@ -238,10 +238,9 @@ body {
 
 .about-content p {
     margin: 0;
-    color: #334155;
+    color: #374151; /* Medium Gray for Text */
     text-align: justify;
 }
-
 
 /* Executive Board Section */
 .e-board {

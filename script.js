@@ -85,4 +85,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize the first page
   showPage(currentPage);
+// Swipe effect for Executive Board
+document.addEventListener("DOMContentLoaded", () => {
+  const boardContainer = document.getElementById("board-container");
+  const boardCards = Array.from(boardContainer.children); // All board cards
+  const boardPrevBtn = document.getElementById("board-prev-btn");
+  const boardNextBtn = document.getElementById("board-next-btn");
+  const boardPagination = document.getElementById("board-pagination");
+  let currentBoardIndex = 0;
+
+  // Initialize pagination
+  boardCards.forEach((_, i) => {
+    const circle = document.createElement("div");
+    circle.classList.add("pagination-circle");
+    if (i === 0) circle.classList.add("active");
+    circle.addEventListener("click", () => goToBoardPage(i));
+    boardPagination.appendChild(circle);
+  });
+
+  function updateBoardView() {
+    boardContainer.style.transform = `translateX(-${currentBoardIndex * 100}%)`;
+    document.querySelectorAll("#board-pagination .pagination-circle").forEach((circle, i) => {
+      circle.classList.toggle("active", i === currentBoardIndex);
+    });
+    boardPrevBtn.disabled = currentBoardIndex === 0;
+    boardNextBtn.disabled = currentBoardIndex === boardCards.length - 1;
+  }
+
+  function goToBoardPage(index) {
+    currentBoardIndex = index;
+    updateBoardView();
+  }
+
+  boardPrevBtn.addEventListener("click", () => {
+    if (currentBoardIndex > 0) currentBoardIndex--;
+    updateBoardView();
+  });
+
+  boardNextBtn.addEventListener("click", () => {
+    if (currentBoardIndex < boardCards.length - 1) currentBoardIndex++;
+    updateBoardView();
+  });
+
+  updateBoardView(); // Initialize view
+});
+
 });

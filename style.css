@@ -10,38 +10,35 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    display: flex; /* Enables flexbox for horizontal alignment */
-    flex-direction: row; /* Aligns items in a row (horizontal) */
-    align-items: center; /* Vertically centers the elements */
-    justify-content: center; /* Horizontally centers the elements */
+    display: flex; /* Enables flexbox */
+    flex-direction: row; /* Horizontal alignment by default */
+    align-items: center;
+    justify-content: center; /* Center everything horizontally */
     text-align: center;
     height: 100vh;
     background-color: #121212;
     overflow: hidden;
-    gap: 20px; /* Adds space between "Hello" and "Welcome to MICS" */
+    gap: 20px; /* Space between "Hello" and "Welcome to MICS" */
 }
 
 /* Styling for the Hello Section */
 .hero-hello {
     position: relative;
-    left: -75px; /* Moves "Hello" 100px to the left */
+    left: 0; /* Remove hard-coded offsets for mobile */
     font-size: 6rem;
     font-weight: bold;
     color: CornflowerBlue;
-    margin: 0; /* Keeps spacing clean */
+    margin: 0; /* Clean spacing */
 }
-
 
 /* Styling for the Welcome to MICS Section */
 .hero-content {
     text-align: center;
 }
 
-
-}
-/* Hero Title with Billboard Effect */
+/* Hero Title */
 .hero-title {
-    font-size: 6rem; /* Increased font size for billboard effect */
+    font-size: 6rem;
     font-weight: bold;
     color: white;
     margin: 0;
@@ -50,10 +47,10 @@ body {
 }
 
 .hero-title .highlight span {
-    font-size: 7rem; /* Extra bold size for MICS */
+    font-size: 7rem;
     font-weight: bold;
     display: inline-block;
-    letter-spacing: -0.1rem; /* Removed spacing for MICS */
+    letter-spacing: -0.1rem;
 }
 
 /* Hero Subtitle */
@@ -83,15 +80,15 @@ body {
     transform: translateY(-5px);
 }
 
-/* Organized Bubbles */
+/* Bubbles */
 .bubble-container {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
-    left: 100px;
+    left: 0; /* Reset offset for mobile */
     pointer-events: none;
-    z-index: 1; /* Behind the text */
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,53 +102,41 @@ body {
     animation: rotate-circle 8s linear infinite;
 }
 
-/* Specific Bubble Positions */
-.bubble:nth-child(1) {
-    transform: translate(-150px, -150px); /* Top-left */
-}
-
-.bubble:nth-child(2) {
-    transform: translate(150px, -150px); /* Top-right */
-}
-
-.bubble:nth-child(3) {
-    transform: translate(-150px, 150px); /* Bottom-left */
-}
-
-.bubble:nth-child(4) {
-    transform: translate(150px, 150px); /* Bottom-right */
-}
-
-/* Keyframes for Circular Animation */
-@keyframes rotate-circle {
-    0% {
-        transform: rotate(0deg) translate(150px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translate(150px) rotate(-360deg);
-    }
-}
-
-/* Responsiveness */
+/* Media Query for Mobile Screens */
 @media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Stack "Hello" and "Welcome to MICS" vertically */
+        gap: 10px; /* Reduce space between elements */
+    }
+
+    .hero-hello {
+        font-size: 3rem; /* Smaller font size for mobile */
+        left: 0; /* Reset offset */
+        margin-bottom: 10px; /* Add some space below "Hello" */
+    }
+
+    .hero-content {
+        font-size: 3rem; /* Adjust font size */
+        text-align: center;
+    }
+
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.5rem; /* Reduce size for mobile */
     }
 
     .hero-title .highlight span {
-        font-size: 4rem;
+        font-size: 3rem; /* Adjust for better visibility */
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1rem; /* Smaller subtitle text */
     }
 
     .bubble {
-        width: 30px;
+        width: 30px; /* Smaller bubble size */
         height: 30px;
     }
 }
-
 
 /* Navbar */
 .navbar {

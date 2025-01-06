@@ -109,17 +109,15 @@
     </div>
 </section>
 
-
-    
-   
 <!-- Upcoming Events Section -->
 <section id="upcoming-events" class="events-section">
     <div class="events-header">
         <h2>Upcoming Events</h2>
         <p>Join us for exciting opportunities to learn, connect, and grow!</p>
     </div>
-    <div class="events-container">
-        <!-- January Events -->
+    <div class="events-wrapper">
+        <div class="events-container" id="events-container">
+            <!-- January Events -->
         <div class="event-card">
             <h3>Classes Begin</h3>
             <p><strong>Date:</strong> January 13, 2024</p>
@@ -221,9 +219,17 @@
             <p><strong>Time:</strong> 5:45 - 7:15 PM</p>
             <p><strong>Location:</strong> Business Building 108</p>
         </div>
-
+        </div>
+        <div class="events-navigation">
+            <button id="prev-btn" class="nav-btn">&lt;</button>
+            <div id="pagination" class="pagination"></div>
+            <button id="next-btn" class="nav-btn">&gt;</button>
+        </div>
     </div>
 </section>
+    
+   
+
 
 
 <!-- Blog Section -->

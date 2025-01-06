@@ -244,7 +244,7 @@ body {
 
 /* Page Background (Parent Section) */
 body {
-    background-color: #f3f4f6; /* Light Gray for Overall Page Background */
+    background-color: linear-gradient(135deg, #1e3a8a, #6b21a8)
 }
 
 

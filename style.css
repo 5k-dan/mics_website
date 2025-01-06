@@ -213,7 +213,7 @@ body {
 .about-us {
     padding: 3rem 2rem;
     text-align: center;
-    background-color: #f9fafb; /* Light Gray Background */
+    background-color: #ffffff; /* White Background */
     color: #1f2937; /* Dark Gray Text Color */
     border-radius: 10px;
     margin: 2rem auto;
@@ -241,6 +241,12 @@ body {
     color: #374151; /* Medium Gray for Text */
     text-align: justify;
 }
+
+/* Page Background (Parent Section) */
+body {
+    background-color: #f3f4f6; /* Light Gray for Overall Page Background */
+}
+
 
 /* Executive Board Section */
 .e-board {

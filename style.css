@@ -10,78 +10,84 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    display: flex; /* Enables flexbox for horizontal alignment */
-    flex-direction: row; /* Aligns items in a row (horizontal) */
-    align-items: center; /* Vertically centers the elements */
-    justify-content: center; /* Horizontally centers the elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     height: 100vh;
-    background-color: #121212;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #fff;
     overflow: hidden;
-    gap: 20px; /* Adds space between "Hello" and "Welcome to MICS" */
+    padding: 20px;
 }
-
 
 /* Styling for the Hello Section */
 .hero-hello {
-    position: relative;
-    left: -75px; /* Moves "Hello" 100px to the left */
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: bold;
-    color: CornflowerBlue;
-    margin: 0; /* Keeps spacing clean */
+    color: #3b82f6;
+    margin: 0 0 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-
 
 /* Styling for the Welcome to MICS Section */
 .hero-content {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-
-}
-/* Hero Title with Billboard Effect */
 .hero-title {
-    font-size: 6rem; /* Increased font size for billboard effect */
+    font-size: 4rem;
     font-weight: bold;
-    color: white;
     margin: 0;
+    color: white;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
 }
 
 .hero-title .highlight span {
-    font-size: 7rem; /* Extra bold size for MICS */
-    font-weight: bold;
+    font-size: 4.5rem;
     display: inline-block;
-    letter-spacing: -0.1rem; /* Removed spacing for MICS */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 /* Hero Subtitle */
 .hero-subtitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 1rem 0;
-    color: #f3f4f6;
+    color: #d1d5db;
 }
 
 /* Learn More Button */
 .cta-btn {
     margin-top: 1.5rem;
-    padding: 1rem 3rem;
-    background-color: #3b82f6;
+    padding: 1rem 2.5rem;
+    background-color: #ef4444;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
     border: none;
-    border-radius: 25px;
+    border-radius: 50px;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .cta-btn:hover {
-    background-color: #2563eb;
-    transform: translateY(-5px);
+    background-color: #dc2626;
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* Organized Bubbles */
@@ -90,84 +96,89 @@ body {
     width: 100%;
     height: 100%;
     top: 0;
-    left: 100px;
+    left: 0;
     pointer-events: none;
-    z-index: 1; /* Behind the text */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 1;
+    overflow: hidden;
 }
 
 .bubble {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    opacity: 0.8;
-    animation: rotate-circle 8s linear infinite;
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 10s infinite ease-in-out;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+    opacity: 0.7;
 }
 
-/* Specific Bubble Positions */
 .bubble:nth-child(1) {
-    transform: translate(-150px, -150px); /* Top-left */
+    top: 10%;
+    left: 20%;
+    animation-duration: 8s;
 }
 
 .bubble:nth-child(2) {
-    transform: translate(150px, -150px); /* Top-right */
+    top: 40%;
+    left: 70%;
+    animation-duration: 12s;
 }
 
 .bubble:nth-child(3) {
-    transform: translate(-150px, 150px); /* Bottom-left */
+    top: 60%;
+    left: 30%;
+    animation-duration: 10s;
 }
 
 .bubble:nth-child(4) {
-    transform: translate(150px, 150px); /* Bottom-right */
+    top: 80%;
+    left: 50%;
+    animation-duration: 14s;
 }
 
-/* Keyframes for Circular Animation */
-@keyframes rotate-circle {
+@keyframes float {
     0% {
-        transform: rotate(0deg) translate(150px) rotate(0deg);
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-50px) translateX(20px);
     }
     100% {
-        transform: rotate(360deg) translate(150px) rotate(-360deg);
+        transform: translateY(0) translateX(0);
     }
 }
 
 /* Media Query for Mobile Screens */
 @media screen and (max-width: 768px) {
-    .hero {
-        flex-direction: column; /* Stack "Hello" and "Welcome to MICS" vertically */
-        gap: 10px; /* Reduce space between elements */
-    }
-
     .hero-hello {
-        font-size: 3rem; /* Smaller font size for mobile */
-        left: 0; /* Reset offset */
-        margin-bottom: 10px; /* Add some space below "Hello" */
-    }
-
-    .hero-content {
-        font-size: 3rem; /* Adjust font size */
-        text-align: center;
+        font-size: 3rem;
     }
 
     .hero-title {
-        font-size: 2.5rem; /* Reduce size for mobile */
+        font-size: 2.5rem;
     }
 
     .hero-title .highlight span {
-        font-size: 3rem; /* Adjust for better visibility */
+        font-size: 3rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem; /* Smaller subtitle text */
+        font-size: 1rem;
+    }
+
+    .cta-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
     }
 
     .bubble {
-        width: 30px; /* Smaller bubble size */
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 }
+
+
 /* Navbar */
 .navbar {
     display: flex;

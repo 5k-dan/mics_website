@@ -284,14 +284,13 @@ body {
 }
 
 .card {
-    flex: 0 0 100%; /* Ensures one card per view */
+    flex: 0 0 100%; /* Ensure one card takes the full width of the container */
     text-align: center;
     background: white;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 0;
-    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card img {

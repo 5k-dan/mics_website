@@ -92,6 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateBoardView() {
     boardContainer.style.transform = `translateX(-${currentBoardIndex * 100}%)`;
+    boardContainer.style.width = `${boardCards.length * 100}%`; // Ensure container width is card count * 100%
+
     document.querySelectorAll("#board-pagination .pagination-circle").forEach((circle, i) => {
       circle.classList.toggle("active", i === currentBoardIndex);
     });

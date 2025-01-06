@@ -324,7 +324,44 @@ body {
     background: #E5E7EB;
     color: #1E3A8A;
 }
-/* Blog Section */
+/* Navigation Buttons */
+.nav-btn {
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #6b21a8;
+}
+
+/* Pagination Circles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.pagination-circle {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-circle.active {
+    background-color: #1e3a8a;
+}
+
 /* Blog Section */
 .blog {
     padding: 4rem 2rem;

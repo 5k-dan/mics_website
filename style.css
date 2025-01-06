@@ -21,6 +21,7 @@ body {
     gap: 20px; /* Adds space between "Hello" and "Welcome to MICS" */
 }
 
+
 /* Styling for the Hello Section */
 .hero-hello {
     position: relative;

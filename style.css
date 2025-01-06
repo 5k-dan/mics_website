@@ -19,7 +19,14 @@ body {
     background-color: #121212;
     overflow: hidden;
 }
+.hero-content {
+    position: relative;
+    left: 20%;
 
+
+
+
+}
 /* Hero Title with Billboard Effect */
 .hero-title {
     font-size: 6rem; /* Increased font size for billboard effect */

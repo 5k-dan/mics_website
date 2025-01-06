@@ -399,29 +399,6 @@ body {
     background-color: #6b21a8;
 }
 
-/* Pagination Circles */
-.pagination {
-    position: relative;
-    top: -70px; /* Adjust this value to position the circles above the cards */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.pagination-circle {
-    width: 10px;
-    height: 10px;
-    background-color: #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.pagination-circle.active {
-    background-color: #1e3a8a;
-}
-
 
 /* Blog Section */
 .blog {

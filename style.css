@@ -16,7 +16,7 @@ body {
     justify-content: center;
     text-align: center;
     height: 100vh;
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    background: #000;
     color: #fff;
     overflow: hidden;
     padding: 20px;

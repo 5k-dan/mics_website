@@ -3,7 +3,7 @@ body {
     font-family: 'Dekko', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e5e7eb; /* Very Light Gray */
+    background-color: linear-gradient(135deg, #1e3a8a, #6b21a8); /* Very Light Gray */
     color: white;
 }
 

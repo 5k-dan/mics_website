@@ -34,20 +34,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Show the current page of events
   function showPage(page) {
-    // Hide all event cards
+    // Calculate the range of events to display
+    const startIndex = page * eventsPerPage;
+    const endIndex = startIndex + eventsPerPage;
+
+    // Update visibility of event cards
     eventCards.forEach((card, index) => {
-      card.style.display = "none";
-      if (index >= page * eventsPerPage && index < (page + 1) * eventsPerPage) {
-        card.style.display = "block";
+      if (index >= startIndex && index < endIndex) {
+        card.style.display = "block"; // Show cards for the current page
+      } else {
+        card.style.display = "none"; // Hide all other cards
       }
     });
 
-    // Update active circle
+    // Update active pagination circle
     document.querySelectorAll(".pagination-circle").forEach((circle, index) => {
       circle.classList.toggle("active", index === page);
     });
 
-    // Enable/disable buttons
+    // Enable/disable navigation buttons
     prevBtn.disabled = page === 0;
     nextBtn.disabled = page === totalPages - 1;
   }
@@ -74,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     showPage(currentPage);
   }
 
-  // Add event listeners to buttons
+  // Add event listeners to navigation buttons
   nextBtn.addEventListener("click", nextPage);
   prevBtn.addEventListener("click", prevPage);
 

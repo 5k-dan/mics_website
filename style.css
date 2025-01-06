@@ -355,7 +355,7 @@ body {
 
 /* Pagination for Executive Board */
 #board-pagination {
-    margin-top: 20px; /* Adjust the value to move the circles further down */
+    margin-top: 40px; /* Adjust the value to move the circles further down */
 }
 
 /* Events Section */

@@ -10,35 +10,38 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    display: flex; /* Enables flexbox */
-    flex-direction: row; /* Horizontal alignment by default */
-    align-items: center;
-    justify-content: center; /* Center everything horizontally */
+    display: flex; /* Enables flexbox for horizontal alignment */
+    flex-direction: row; /* Aligns items in a row (horizontal) */
+    align-items: center; /* Vertically centers the elements */
+    justify-content: center; /* Horizontally centers the elements */
     text-align: center;
     height: 100vh;
     background-color: #121212;
     overflow: hidden;
-    gap: 20px; /* Space between "Hello" and "Welcome to MICS" */
+    gap: 20px; /* Adds space between "Hello" and "Welcome to MICS" */
 }
 
 /* Styling for the Hello Section */
 .hero-hello {
     position: relative;
-    left: 0; /* Remove hard-coded offsets for mobile */
+    left: -75px; /* Moves "Hello" 100px to the left */
     font-size: 6rem;
     font-weight: bold;
     color: CornflowerBlue;
-    margin: 0; /* Clean spacing */
+    margin: 0; /* Keeps spacing clean */
 }
+
 
 /* Styling for the Welcome to MICS Section */
 .hero-content {
     text-align: center;
 }
 
-/* Hero Title */
+
+}
+/* Hero Title with Billboard Effect */
 .hero-title {
-    font-size: 6rem;
+    font-size: 6rem; /* Increased font size for billboard effect */
     font-weight: bold;
     color: white;
     margin: 0;
@@ -47,10 +50,10 @@ body {
 }
 
 .hero-title .highlight span {
-    font-size: 7rem;
+    font-size: 7rem; /* Extra bold size for MICS */
     font-weight: bold;
     display: inline-block;
-    letter-spacing: -0.1rem;
+    letter-spacing: -0.1rem; /* Removed spacing for MICS */
 }
 
 /* Hero Subtitle */
@@ -80,15 +83,15 @@ body {
     transform: translateY(-5px);
 }
 
-/* Bubbles */
+/* Organized Bubbles */
 .bubble-container {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0; /* Reset offset for mobile */
+    left: 100px;
     pointer-events: none;
-    z-index: 1;
+    z-index: 1; /* Behind the text */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,6 +103,33 @@ body {
     height: 50px;
     opacity: 0.8;
     animation: rotate-circle 8s linear infinite;
+}
+
+/* Specific Bubble Positions */
+.bubble:nth-child(1) {
+    transform: translate(-150px, -150px); /* Top-left */
+}
+
+.bubble:nth-child(2) {
+    transform: translate(150px, -150px); /* Top-right */
+}
+
+.bubble:nth-child(3) {
+    transform: translate(-150px, 150px); /* Bottom-left */
+}
+
+.bubble:nth-child(4) {
+    transform: translate(150px, 150px); /* Bottom-right */
+}
+
+/* Keyframes for Circular Animation */
+@keyframes rotate-circle {
+    0% {
+        transform: rotate(0deg) translate(150px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translate(150px) rotate(-360deg);
+    }
 }
 
 /* Media Query for Mobile Screens */

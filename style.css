@@ -352,6 +352,11 @@ body {
 .pagination-circle.active {
     background-color: #1e3a8a;
 }
+#board-pagination {
+    position: relative;
+    top: 20px; /* Move down by 20px */
+}
+
 
 /* Events Section */
 .events-section {
@@ -388,6 +393,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    top: 20px;
 }
 
 .nav-btn:hover {

@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const eventCards = Array.from(eventsContainer.children); // All event cards
   const prevBtn = document.getElementById("prev-btn");
   const nextBtn = document.getElementById("next-btn");
-  const pagination = document.getElementById("pagination");
+  const eventsPagination = document.getElementById("pagination"); // Use a unique ID for Upcoming Events
 
   const eventsPerPage = 3;
   let currentPage = 0;
@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Create pagination circles
   for (let i = 0; i < totalPages; i++) {
     const circle = document.createElement("div");
-    circle.classList.add("pagination-circle");
+    circle.classList.add("events-pagination-circle"); // Use a unique class
     if (i === 0) circle.classList.add("active");
     circle.dataset.page = i;
     circle.addEventListener("click", () => goToPage(i));
-    pagination.appendChild(circle);
+    eventsPagination.appendChild(circle);
   }
 
   // Show the current page of events
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.display = index >= startIndex && index < endIndex ? "block" : "none";
     });
 
-    document.querySelectorAll(".pagination-circle").forEach((circle, index) => {
+    document.querySelectorAll(".events-pagination-circle").forEach((circle, index) => {
       circle.classList.toggle("active", index === page);
     });
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const boardCards = Array.from(boardContainer.children); // All board cards
   const boardPrevBtn = document.getElementById("board-prev-btn");
   const boardNextBtn = document.getElementById("board-next-btn");
-  const boardPagination = document.getElementById("board-pagination");
+  const boardPagination = document.getElementById("board-pagination"); // Use a unique ID for Executive Board
 
   const boardsPerPage = 1; // Display 1 card at a time
   let currentBoardPage = 0;
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Create pagination circles for the board
   for (let i = 0; i < totalBoardPages; i++) {
     const circle = document.createElement("div");
-    circle.classList.add("pagination-circle");
+    circle.classList.add("board-pagination-circle"); // Use a unique class
     if (i === 0) circle.classList.add("active");
     circle.dataset.page = i;
     circle.addEventListener("click", () => goToBoardPage(i));
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.display = index >= startIndex && index < endIndex ? "block" : "none";
     });
 
-    document.querySelectorAll("#board-pagination .pagination-circle").forEach((circle, index) => {
+    document.querySelectorAll(".board-pagination-circle").forEach((circle, index) => {
       circle.classList.toggle("active", index === page);
     });
 

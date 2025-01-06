@@ -86,12 +86,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const boardNextBtn = document.getElementById("board-next-btn");
   const boardPagination = document.getElementById("board-pagination");
 
-  const cardsPerPage = 1; // Only one card is visible at a time
   const totalBoardPages = boardCards.length;
   let currentBoardPage = 0;
 
-  // Ensure container width matches the total number of cards
-  boardContainer.style.width = `${100 * totalBoardPages}%`;
+  // Set the container's width dynamically to fit all cards
+  boardContainer.style.width = `${totalBoardPages * 100}%`;
+
+  // Set each card's width dynamically
+  boardCards.forEach(card => {
+    card.style.width = "100%"; // One card per view
+    card.style.flex = "0 0 100%";
+  });
 
   // Create pagination circles for board section
   for (let i = 0; i < totalBoardPages; i++) {
@@ -104,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showBoardPage(page) {
-    const offset = -page * 100; // Slide by 100% of container width
+    const offset = -page * 100; // Translate by 100% for each page
     boardContainer.style.transform = `translateX(${offset}%)`;
 
     document.querySelectorAll("#board-pagination .pagination-circle").forEach((circle, index) => {
@@ -139,3 +144,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   showBoardPage(currentBoardPage); // Initialize the first page
 });
+

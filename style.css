@@ -20,6 +20,17 @@ body {
     overflow: hidden;
     gap: 20px; /* Adds space between "Hello" and "Welcome to MICS" */
 }
+/* Slide-in Animation for "Hello" */
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0; /* Fully transparent */
+    }
+    to {
+        transform: translateX(0); /* Slide into the original position */
+        opacity: 1; /* Fully visible */
+    }
+}
 
 /* Styling for the Hello Section */
 .hero-hello {
@@ -38,17 +49,6 @@ body {
 }
 
 
-/* Slide-in Animation for "Hello" */
-@keyframes slide-in {
-    from {
-        transform: translateX(-100%); /* Start off-screen to the left */
-        opacity: 0; /* Fully transparent */
-    }
-    to {
-        transform: translateX(0); /* Slide into the original position */
-        opacity: 1; /* Fully visible */
-    }
-}
 
 /* Hero Title with Billboard Effect */
 .hero-title {

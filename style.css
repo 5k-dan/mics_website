@@ -255,19 +255,6 @@ body {
     margin-bottom: 20px;
     color: #1E3A8A;
 }
-/* Executive Board Section */
-/* Executive Board Section */
-.e-board {
-    background-color: #F5F5F5;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.e-board h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #1E3A8A;
-}
 
 .board-wrapper {
     position: relative;
@@ -280,11 +267,11 @@ body {
 .board-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: calc(100% * 7); /* Adjust based on the number of cards */
+    width: 100%; /* Ensure the width is flexible */
 }
 
 .card {
-    flex: 0 0 100%; /* Ensures one card per view */
+    flex: 0 0 100%; /* Ensure only one card is visible at a time */
     text-align: center;
     background: white;
     border-radius: 10px;
@@ -292,6 +279,10 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     margin: 0;
     box-sizing: border-box;
+    display: flex; /* Added to ensure content alignment */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card img {

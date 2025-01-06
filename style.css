@@ -256,99 +256,42 @@ body {
     color: #1E3A8A;
 }
 /* Executive Board Section */
+/* Executive Board Section */
+.e-board {
+    background-color: #F5F5F5;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.e-board h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1E3A8A;
+}
+
 .board-wrapper {
     position: relative;
     overflow: hidden; /* Ensures only one card is visible */
     max-width: 400px; /* Matches the card width */
-    margin: 0 auto;
+    margin: 0 auto; /* Centers the board wrapper */
     border-radius: 10px;
 }
 
 .board-container {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 100%;
+    width: calc(100% * 7); /* Adjust based on the number of cards */
 }
 
 .card {
-    flex: 0 0 100%; /* Makes each card take full width */
+    flex: 0 0 100%; /* Ensures one card per view */
     text-align: center;
     background: white;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     margin: 0;
-}
-
-.card img {
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.board-navigation .nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #1e3a8a;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.board-navigation #board-prev-btn {
-    left: -50px;
-}
-
-.board-navigation #board-next-btn {
-    right: -50px;
-}
-
-.pagination {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-}
-
-.pagination-circle {
-    width: 10px;
-    height: 10px;
-    background-color: #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.pagination-circle.active {
-    background-color: #1e3a8a;
-}
-
-.board-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
-}
-
-.card {
-    text-align: center;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-    max-width: 300px;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-    background: #E5E7EB;
+    box-sizing: border-box;
 }
 
 .card img {
@@ -369,6 +312,54 @@ body {
 .card p {
     font-size: 1rem;
     color: #6B7280;
+}
+
+/* Navigation Buttons */
+.board-navigation .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.board-navigation .nav-btn:hover {
+    background-color: #6b21a8;
+}
+
+.board-navigation #board-prev-btn {
+    left: 10px;
+}
+
+.board-navigation #board-next-btn {
+    right: 10px;
+}
+
+/* Pagination Circles */
+.pagination {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.pagination-circle {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-circle.active {
+    background-color: #1e3a8a;
 }
 
 /* Events Section */

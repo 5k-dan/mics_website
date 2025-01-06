@@ -8,8 +8,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Swipe effect for upcoming events
 document.addEventListener("DOMContentLoaded", () => {
-  // Swipe effect for upcoming events
   const eventsContainer = document.getElementById("events-container");
   const eventCards = Array.from(eventsContainer.children); // All event cards
   const prevBtn = document.getElementById("prev-btn");
@@ -34,21 +34,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Show the current page of events
   function showPage(page) {
+    // Calculate the range of events to display
     const startIndex = page * eventsPerPage;
     const endIndex = startIndex + eventsPerPage;
 
+    // Update visibility of event cards
     eventCards.forEach((card, index) => {
-      card.style.display = index >= startIndex && index < endIndex ? "block" : "none";
+      if (index >= startIndex && index < endIndex) {
+        card.style.display = "block"; // Show cards for the current page
+      } else {
+        card.style.display = "none"; // Hide all other cards
+      }
     });
 
+    // Update active pagination circle
     document.querySelectorAll(".pagination-circle").forEach((circle, index) => {
       circle.classList.toggle("active", index === page);
     });
 
+    // Enable/disable navigation buttons
     prevBtn.disabled = page === 0;
     nextBtn.disabled = page === totalPages - 1;
   }
 
+  // Go to the next page
   function nextPage() {
     if (currentPage < totalPages - 1) {
       currentPage++;
@@ -56,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Go to the previous page
   function prevPage() {
     if (currentPage > 0) {
       currentPage--;
@@ -63,66 +73,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Go to a specific page
   function goToPage(page) {
     currentPage = page;
     showPage(currentPage);
   }
 
+  // Add event listeners to navigation buttons
   nextBtn.addEventListener("click", nextPage);
   prevBtn.addEventListener("click", prevPage);
 
-  showPage(currentPage); // Initialize the first page
-
-  // Swipe effect for Executive Board
-  const boardContainer = document.getElementById("board-container");
-  const boardCards = Array.from(boardContainer.children); // All board cards
-  const boardPrevBtn = document.getElementById("board-prev-btn");
-  const boardNextBtn = document.getElementById("board-next-btn");
-  const boardPagination = document.getElementById("board-pagination");
-  let currentBoardIndex = 0;
-  boardContainer.style.width = `${boardCards.length * 100}%`;
-  boardCards.forEach((card) => {
-    const img = card.querySelector("img");
-    if (img && !img.complete) {
-        img.onload = () => updateBoardView();
-    }
-});
-
-  // Initialize pagination
-  boardCards.forEach((_, i) => {
-    const circle = document.createElement("div");
-    circle.classList.add("pagination-circle");
-    if (i === 0) circle.classList.add("active");
-    circle.addEventListener("click", () => goToBoardPage(i));
-    boardPagination.appendChild(circle);
-  });
-
-  function updateBoardView() {
-    boardContainer.style.transform = `translateX(-${currentBoardIndex * 100}%)`;
-    boardContainer.style.width = `${boardCards.length * 100}%`; // Ensure container width is card count * 100%
-
-    document.querySelectorAll("#board-pagination .pagination-circle").forEach((circle, i) => {
-      circle.classList.toggle("active", i === currentBoardIndex);
-    });
-    boardPrevBtn.disabled = currentBoardIndex === 0;
-    boardNextBtn.disabled = currentBoardIndex === boardCards.length - 1;
-    
-  }
-
-  function goToBoardPage(index) {
-    currentBoardIndex = index;
-    updateBoardView();
-  }
-
-  boardPrevBtn.addEventListener("click", () => {
-    if (currentBoardIndex > 0) currentBoardIndex--;
-    updateBoardView();
-  });
-
-  boardNextBtn.addEventListener("click", () => {
-    if (currentBoardIndex < boardCards.length - 1) currentBoardIndex++;
-    updateBoardView();
-  });
-
-  updateBoardView(); // Initialize the first card
+  // Initialize the first page
+  showPage(currentPage);
 });

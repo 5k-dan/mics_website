@@ -24,11 +24,11 @@ body {
 /* Styling for the Hello Section */
 .hero-hello {
     position: relative;
-    left: -75px; /* Moves "Hello" 100px to the left */
     font-size: 6rem;
     font-weight: bold;
     color: Aqua;
-    margin: 0; /* Keeps spacing clean */
+    margin: 0;
+    animation: slide-in 1.5s ease-out; /* Add the slide-in animation */
 }
 
 
@@ -38,7 +38,18 @@ body {
 }
 
 
+/* Slide-in Animation for "Hello" */
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0; /* Fully transparent */
+    }
+    to {
+        transform: translateX(0); /* Slide into the original position */
+        opacity: 1; /* Fully visible */
+    }
 }
+
 /* Hero Title with Billboard Effect */
 .hero-title {
     font-size: 6rem; /* Increased font size for billboard effect */
